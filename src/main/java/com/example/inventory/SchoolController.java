@@ -22,6 +22,15 @@ public class SchoolController {
         return school.getSchool(searchString);
     }
 
+ @RequestMapping(value = "student/{id}", method = RequestMethod.GET)
+    public List<Student> getStudentID(@PathVariable("id") long id) {
+
+        //ArrayList<Student> students = new ArrayList<>();
+        //Student student = new Student();
+        return getStudentID(id);
+
+
+    }
 
 
 
