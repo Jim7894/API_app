@@ -23,13 +23,20 @@ public class SchoolController {
     }
 
  @RequestMapping(value = "student/{id}", method = RequestMethod.GET)
-    public List<Student> getStudentID(@PathVariable("id") long id) {
+ public Student getStudentID(@PathVariable("id") String id)  {
 
-        //ArrayList<Student> students = new ArrayList<>();
-        //Student student = new Student();
-        return getStudentID(id);
-
-
+        //vi kollar alla studenter
+        for (Student student : students) {
+            
+            
+            //Om det finns en student som har id så returnerar vi hen. 
+            if(student.getID().equals(id)) {
+                return student;
+            }
+               
+        }
+        //annars ingen
+        return null;
     }
 
 
