@@ -47,6 +47,10 @@ public class School {
     public void addStudent(Student student) {
         school.add(student);
     }
+    
+     public void removeStudent(Student student) {
+        school.remove(student);
+    }
 
     private void addMockData() {
 
