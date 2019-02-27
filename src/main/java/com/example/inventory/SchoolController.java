@@ -38,6 +38,27 @@ public class SchoolController {
         //annars ingen
         return null;
     }
+    
+        @RequestMapping(value = "student/{id}", method = RequestMethod.DELETE)
+    public Student removeStudentID(@PathVariable("id") String id) {
+
+        List<Student> students = school.getSchool("");
+
+
+        for (Student student : students) {
+
+
+            //Om det finns en student som har id så returnerar vi hen.
+            if(student.getID().equals(id)) {
+                school.removeStudent(student);
+                return student;
+            }
+
+        }
+
+        return null;
+
+    }
 
 
 
