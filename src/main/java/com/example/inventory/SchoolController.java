@@ -22,21 +22,26 @@ public class SchoolController {
         return school.getSchool(searchString);
     }
 
- @RequestMapping(value = "student/{id}", method = RequestMethod.GET)
- public Student getStudentID(@PathVariable("id") String id)  {
+// @RequestMapping(value = "student/{id}", method = RequestMethod.GET)
+// public Student getStudentID(@PathVariable("id") String id)  {
+//
+//        //vi kollar alla studenter
+//        for (Student student : students) {
+//
+//
+//            //Om det finns en student som har id så returnerar vi hen.
+//            if(student.getID().equals(id)) {
+//                return student;
+//            }
+//
+//        }
+//        //annars ingen
+//        return null;
+//    }
 
-        //vi kollar alla studenter
-        for (Student student : students) {
-            
-            
-            //Om det finns en student som har id så returnerar vi hen. 
-            if(student.getID().equals(id)) {
-                return student;
-            }
-               
-        }
-        //annars ingen
-        return null;
+    @GetMapping("student/{id}")
+    public Student getSudentById(@PathVariable("id") String id) {
+        return school.getStudentById(id);
     }
     
         @RequestMapping(value = "student/{id}", method = RequestMethod.DELETE)

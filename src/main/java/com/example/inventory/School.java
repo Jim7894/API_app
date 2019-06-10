@@ -44,6 +44,15 @@ public class School {
         return courses;
     }*/
 
+    Student getStudentById(String id) {
+        for (Student student : school) {
+            if (student.getID().equals(id)) {
+                return student;
+            }
+        }
+        return null;
+    }
+
     public void addStudent(Student student) {
         school.add(student);
     }
